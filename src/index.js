@@ -14,6 +14,22 @@ app.use(express.json());
 passport.use(jwtStrategy);
 app.use(passport.initialize());
 
+// 아이디 중복확인 엔드포인트
+app.get("/check-username/:username", async (req, res) => {
+  const username = req.params.username;
+  try {
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
+      res.status(200).json({ available: false }); // 이미 사용 중인 경우
+    } else {
+      res.status(200).json({ available: true }); // 사용 가능한 경우
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error checking username availability" });
+  }
+});
+
 // 회원가입 엔드포인트
 app.post("/register", async (req, res) => {
   try {
@@ -26,6 +42,32 @@ app.post("/register", async (req, res) => {
     res.status(500).json({ error: "Registration failed" });
   }
 });
+
+// 비밀번호 재설정
+app.post("/forgot-password", async (req, res) => {
+  const { username } = req.body;
+  try {
+    const user = await User.findOne({ username });
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    // 여기에서 비밀번호 재설정 이메일을 전송하거나 임시 비밀번호를 생성하여 전송하는 로직을 추가할 수 있습니다.
+    // 임시 비밀번호를 생성하고 이메일로 전송하는 예시 코드:
+    const temporaryPassword = generateTemporaryPassword(); // 임시 비밀번호 생성 함수 예시
+    user.password = temporaryPassword;
+    await user.save();
+    res.status(200).json({ message: "Temporary password sent successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error processing request" });
+  }
+});
+
+// 임시 비밀번호 생성로직(무작위 8자리 문자)
+function generateTemporaryPassword() {
+  const temporaryPassword = Math.random().toString(36).slice(-8); // 무작위 8자리 문자열 생성
+  return temporaryPassword;
+}
 
 // 로그인 엔드포인트
 app.post("/login", async (req, res) => {
