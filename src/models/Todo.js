@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 
 const TodoSchema = new mongoose.Schema({
   title: { type: String, required: true, unique: true }, //일정명
+  contents: { type: String }, //메모
   regDate: { type: Date, default: Date.now }, //등록일
   dueDate: { type: Date, required: true }, //마감일
   categori: { type: String, required: true }, //직장 또는 일상 0이면 직장, 1이면 일상
