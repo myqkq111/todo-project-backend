@@ -1,4 +1,3 @@
-// 일정 DB
 import mongoose from "mongoose";
 
 const TodoSchema = new mongoose.Schema({
