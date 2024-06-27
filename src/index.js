@@ -1,14 +1,15 @@
 import express from 'express';
-import cors from 'cors';
 import connectDB from './config/db.js';
 import passport from 'passport';
+import filterRouter from './routes/filterRouter.js';
+import router from './routes/filterRouter.js';
+import cors from 'cors';
+import Schedule from './middleware/Schedule.js';
 import jwtStrategy from './config/passport.js';
 import User from './models/User.js';
 import jwt from 'jsonwebtoken'; // jsonwebtoken 패키지 임포트
-import bcrypt from 'bcrypt';
-import dotenv from 'dotenv';
-
-dotenv.config();
+// import bcrypt from 'bcrypt';
+// import dotenv from 'dotenv';
 
 const app = express();
 connectDB();
@@ -37,11 +38,16 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
+app.use(cors());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 passport.use(jwtStrategy);
 app.use(passport.initialize());
 
+Schedule();
+
+app.use('/api/filter', filterRouter);
 // CORS 설정 (테스트용, 실제 환경에서는 필요에 따라 변경)
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -252,7 +258,7 @@ app.delete('/delete', authenticateToken, async (req, res) => {
   }
 });
 
-app.use('/api/todos', todoRouter);
+app.use('/api/todos', router);
 
 app.listen(3000, () => {
   console.log('Server running on port 3000');
