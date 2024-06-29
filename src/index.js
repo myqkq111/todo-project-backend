@@ -72,6 +72,7 @@ app.get('/check-username/:username', async (req, res) => {
   }
 });
 
+
 // 회원가입 엔드포인트
 app.post('/register', async (req, res) => {
   try {
