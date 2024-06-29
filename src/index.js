@@ -74,10 +74,14 @@ app.get('/check-username/:username', async (req, res) => {
 });
 
 
-// 회원가입 엔드포인트
 app.post("/register", async (req, res) => {
   try {
     const { username, password, email } = req.body;
+    
+    if (!username || !password || !email) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
     const user = new User({ username, password, email });
     await user.save();
     res.status(201).json({ message: "User registered successfully" });
@@ -86,6 +90,7 @@ app.post("/register", async (req, res) => {
     res.status(500).json({ error: "Registration failed" });
   }
 });
+
 
 // 로그인 엔드포인트
 app.post("/login", async (req, res) => {
