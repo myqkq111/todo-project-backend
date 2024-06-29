@@ -28,9 +28,7 @@ router.get("/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    console.log(req.query.dueDate);
     const todo = await Todo.find({ dueDate: req.query.dueDate });
-    console.log(todo);
     if (!todo) {
       return res.status(404).send({ message: "Todo not found" });
     }
@@ -69,12 +67,21 @@ router.post("/new", async (req, res) => {
 });
 
 // UPDATE a todo by id
-router.put("/update/:id", async (req, res) => {
+router.put("/update", async (req, res) => {
   try {
-    const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const { body : { userId, title, recurringEvent, memo, regDate, recurringPeriod, dueDate}} = req;
+    console.log(dueDate);
+    const todo = await Todo.findOneAndUpdate(
+      { userId: userId },
+      {
+        title: title, 
+        recurringEvent : recurringEvent,
+        memo : memo,
+        regDate : regDate,
+        recurringPeriod : recurringPeriod,
+        dueDate : dueDate
+      }
+    );
     if (!todo) {
       return res.status(404).send({ message: "Todo not found" });
     }

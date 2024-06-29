@@ -2,7 +2,7 @@ import express from 'express';
 import connectDB from './config/db.js';
 import passport from 'passport';
 import filterRouter from './routes/filterRouter.js';
-import router from './routes/filterRouter.js';
+import router from './routes/todoRouter.js';
 import cors from 'cors';
 import Schedule from './middleware/Schedule.js';
 import jwtStrategy from './config/passport.js';
@@ -48,6 +48,7 @@ app.use(passport.initialize());
 Schedule();
 
 app.use('/api/filter', filterRouter);
+
 // CORS 설정 (테스트용, 실제 환경에서는 필요에 따라 변경)
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

@@ -9,8 +9,10 @@ const TodoSchema = new mongoose.Schema({
   failedSchedule: { type: Boolean, default: false }, //시간이 지나도 완료하지 못한 실패한 일정여부
   isImportant: { type: Boolean, default: false }, //중요여부
   recurringEvent: { type: Boolean, default: false }, //주기적인 일
+  recurringPeriod: {type: String, default:'0'}, //반복 기간
   userId: { type: mongoose.Types.ObjectId }, //등록한 userId
-});
+  memo: {type:String} //memo
+}); 
 
 const Todo = mongoose.model("Todo", TodoSchema);
 
