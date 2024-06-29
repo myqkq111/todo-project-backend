@@ -87,22 +87,27 @@ app.post('/register', async (req, res) => {
   }
 });
 
-//로그인 엔드포인트
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
-    if (user && (await user.comparePassword(password))) {
-      const token = generateToken(user); // 토큰 생성 로직
-      res.status(200).json({ token });
-    } else {
-      res.status(401).json({ message: 'Invalid username or password' });
+    console.log('User found:', user);
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid username or password' });
     }
+    const isMatch = await user.comparePassword(password);
+    console.log('Password match:', isMatch);
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+    const token = generateToken(user);
+    res.status(200).json({ token });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Login failed' });
   }
 });
+
 
 // 로그아웃 엔드포인트
 app.post('/logout', (req, res) => {
