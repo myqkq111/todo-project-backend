@@ -75,36 +75,32 @@ app.get('/check-username/:username', async (req, res) => {
 
 
 // 회원가입 엔드포인트
-app.post('/register', async (req, res) => {
+app.post("/register", async (req, res) => {
   try {
     const { username, password, email } = req.body;
     const user = new User({ username, password, email });
     await user.save();
-    res.status(201).json({ message: 'User registered successfully' });
+    res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Registration failed' });
+    console.error("Registration error:", err);
+    res.status(500).json({ error: "Registration failed" });
   }
 });
 
-app.post('/login', async (req, res) => {
+// 로그인 엔드포인트
+app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
-    console.log('User found:', user);
-    if (!user) {
-      return res.status(401).json({ message: 'Invalid username or password' });
+    if (user && (await user.matchPassword(password))) {
+      const token = generateToken(user);
+      res.status(200).json({ token });
+    } else {
+      res.status(401).json({ message: "Invalid username or password" });
     }
-    const isMatch = await user.comparePassword(password);
-    console.log('Password match:', isMatch);
-    if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid username or password' });
-    }
-    const token = generateToken(user);
-    res.status(200).json({ token });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Login failed' });
+    console.error("Login error:", err);
+    res.status(500).json({ error: "Login failed" });
   }
 });
 
