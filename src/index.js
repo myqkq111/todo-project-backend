@@ -69,7 +69,7 @@ app.get('/check-username/:username', async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Error checking username availability' });
+    res.status(500).json({ error: '이미 사용중인 아이디 입니다' });
   }
 });
 
@@ -79,15 +79,15 @@ app.post("/register", async (req, res) => {
     const { username, password, email } = req.body;
     
     if (!username || !password || !email) {
-      return res.status(400).json({ error: "All fields are required" });
+      return res.status(400).json({ error: "필수 입력사항입니다" });
     }
 
     const user = new User({ username, password, email });
     await user.save();
-    res.status(201).json({ message: "User registered successfully" });
+    res.status(201).json({ message: "회원가입 성공" });
   } catch (err) {
     console.error("Registration error:", err);
-    res.status(500).json({ error: "Registration failed" });
+    res.status(500).json({ error: "회원가입 실패 재입력해주세요" });
   }
 });
 
@@ -101,7 +101,7 @@ app.post("/login", async (req, res) => {
       const token = generateToken(user);
       res.status(200).json({ token });
     } else {
-      res.status(401).json({ message: "Invalid username or password" });
+      res.status(401).json({ message: "로그인 성공" });
     }
   } catch (err) {
     console.error("Login error:", err);
@@ -113,7 +113,7 @@ app.post("/login", async (req, res) => {
 // 로그아웃 엔드포인트
 app.post('/logout', (req, res) => {
   // 클라이언트에서 토큰을 삭제하거나 무효화하는 로직 추가
-  res.status(200).json({ message: 'User logged out successfully' });
+  res.status(200).json({ message: '성공적으로 로그아웃 되었습니다.' });
 });
 
 // 아이디찾기
@@ -124,7 +124,7 @@ app.post('/find-id', async (req, res) => {
     // 예: 데이터베이스에서 이메일로 사용자를 찾아서 아이디를 응답합니다.
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+      return res.status(404).json({ error: '사용자를 찾을 수 없습니다' });
     }
     res.status(200).json({ username: user.username });
   } catch (error) {
