@@ -9,7 +9,8 @@ router.put("/isImportant", async (req, res) => {
     const {
       body: { userId, isImportant },
     } = req;
-
+    console.log(userId);
+    console.log(isImportant);
     const update = isImportant ? false : true;
     const todo = await Todo.findOneAndUpdate(
       { userId: userId },
