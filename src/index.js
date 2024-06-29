@@ -85,29 +85,20 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// 로그인 엔드포인트
+//로그인 엔드포인트
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
-
   try {
     const user = await User.findOne({ username });
-    if (!user) {
-      return res.status(401).json({ message: 'Authentication failed' });
+    if (user && (await user.comparePassword(password))) {
+      const token = generateToken(user); // 토큰 생성 로직
+      res.status(200).json({ token });
+    } else {
+      res.status(401).json({ message: 'Invalid username or password' });
     }
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(401).json({ message: 'Authentication failed' });
-    }
-
-    const token = jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: '1h',
-    });
-
-    res.json({ token });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Login failed' });
   }
 });
 
