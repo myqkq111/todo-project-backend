@@ -70,7 +70,6 @@ router.post("/new", async (req, res) => {
 router.put("/update", async (req, res) => {
   try {
     const { body : { userId, title, recurringEvent, memo, regDate, recurringPeriod, dueDate}} = req;
-    console.log(dueDate);
     const todo = await Todo.findOneAndUpdate(
       { userId: userId },
       {
@@ -82,6 +81,12 @@ router.put("/update", async (req, res) => {
         dueDate : dueDate
       }
     );
+    if(!recurringEvent){
+      await Todo.updateMany(
+        { userId: userId },  
+        { $unset: { recurringPeriod: "", regDate: "" } } 
+      );
+    }
     if (!todo) {
       return res.status(404).send({ message: "Todo not found" });
     }
@@ -94,6 +99,7 @@ router.put("/update", async (req, res) => {
 // DELETE a todo by id
 router.delete("/delete/:id", async (req, res) => {
   try {
+    console.log(req.params.id);
     const todo = await Todo.findByIdAndDelete(req.params.id);
     if (!todo) {
       return res.status(404).send({ message: "Todo not found" });
