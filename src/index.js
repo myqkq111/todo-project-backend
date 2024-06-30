@@ -77,9 +77,14 @@ app.get('/check-username/:username', async (req, res) => {
 app.post("/register", async (req, res) => {
   try {
     const { username, password, email } = req.body;
-    
+
     if (!username || !password || !email) {
       return res.status(400).json({ error: "필수 입력사항입니다" });
+    }
+
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
+      return res.status(400).json({ error: "이미 사용 중인 아이디입니다" });
     }
 
     const user = new User({ username, password, email });
@@ -92,22 +97,23 @@ app.post("/register", async (req, res) => {
 });
 
 
-// 로그인 엔드포인트
+//로그인 엔드포인트
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
     if (user && (await user.matchPassword(password))) {
-      const token = generateToken(user);
+      const token = generateToken(user);  // 토큰 생성 함수는 별도로 정의해야 합니다.
       res.status(200).json({ token });
     } else {
-      res.status(401).json({ message: "로그인 성공" });
+      res.status(401).json({ message: "유효하지 않은 아이디 또는 비밀번호입니다" });
     }
   } catch (err) {
     console.error("Login error:", err);
-    res.status(500).json({ error: "Login failed" });
+    res.status(500).json({ error: "로그인 실패" });
   }
 });
+
 
 
 // 로그아웃 엔드포인트
