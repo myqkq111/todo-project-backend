@@ -7,6 +7,7 @@ import cors from 'cors';
 import Schedule from './middleware/Schedule.js';
 import jwtStrategy from './config/passport.js';
 import User from './models/User.js';
+import recurringEventCron from './middleware/recurringEventCron.js';
 import jwt from 'jsonwebtoken'; // jsonwebtoken 패키지 임포트
 // import bcrypt from 'bcrypt';
 // import dotenv from 'dotenv';
@@ -45,7 +46,8 @@ app.use(express.json());
 passport.use(jwtStrategy);
 app.use(passport.initialize());
 
-Schedule();
+Schedule(); // 미완료 일정 자동 등록
+recurringEventCron(); // 주기적인 일정 자동 업데이트
 
 app.use('/api/filter', filterRouter);
 

@@ -123,4 +123,29 @@ router.get("/failedSchedule", async (req, res) => {
   }
 });
 
+//검색 기능
+router.get("/", async (req, res) => {
+  try {
+    const {query: { category, typing }} = req;
+    let todos;
+    if(category === 'all'){
+      todos = await Todo.find({ title: { $regex: typing } });
+    } else {
+      let su;
+      category === 'dailyLife' ? su = 1 : su = 0;
+      todos = await Todo.find({
+        $and: [
+          { categori: su },
+          { title: { $regex: typing } } 
+        ]
+      });
+    }
+    return res.status(200).json(todos);
+  } catch (err) {
+    return res.status(500).send("Internal server error");
+  }
+});
+
+
+
 export default router;
