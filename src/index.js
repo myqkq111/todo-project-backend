@@ -2,7 +2,7 @@ import express from 'express';
 import connectDB from './config/db.js';
 import passport from 'passport';
 import filterRouter from './routes/filterRouter.js';
-import router from './routes/todoRouter.js';
+import todoRouter from './routes/todoRouter.js';
 import cors from 'cors';
 import Schedule from './middleware/Schedule.js';
 import jwtStrategy from './config/passport.js';
@@ -75,48 +75,46 @@ app.get('/check-username/:username', async (req, res) => {
   }
 });
 
-
-app.post("/register", async (req, res) => {
+app.post('/register', async (req, res) => {
   try {
     const { username, password, email } = req.body;
 
     if (!username || !password || !email) {
-      return res.status(400).json({ error: "필수 입력사항입니다" });
+      return res.status(400).json({ error: '필수 입력사항입니다' });
     }
 
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).json({ error: "이미 사용 중인 아이디입니다" });
+      return res.status(400).json({ error: '이미 사용 중인 아이디입니다' });
     }
 
     const user = new User({ username, password, email });
     await user.save();
-    res.status(201).json({ message: "회원가입 성공" });
+    res.status(201).json({ message: '회원가입 성공' });
   } catch (err) {
-    console.error("Registration error:", err);
-    res.status(500).json({ error: "회원가입 실패 재입력해주세요" });
+    console.error('Registration error:', err);
+    res.status(500).json({ error: '회원가입 실패 재입력해주세요' });
   }
 });
 
-
 //로그인 엔드포인트
-app.post("/login", async (req, res) => {
+app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
     if (user && (await user.matchPassword(password))) {
-      const token = generateToken(user);  // 토큰 생성 함수는 별도로 정의해야 합니다.
+      const token = generateToken(user); // 토큰 생성 함수는 별도로 정의해야 합니다.
       res.status(200).json({ token });
     } else {
-      res.status(401).json({ message: "유효하지 않은 아이디 또는 비밀번호입니다" });
+      res
+        .status(401)
+        .json({ message: '유효하지 않은 아이디 또는 비밀번호입니다' });
     }
   } catch (err) {
-    console.error("Login error:", err);
-    res.status(500).json({ error: "로그인 실패" });
+    console.error('Login error:', err);
+    res.status(500).json({ error: '로그인 실패' });
   }
 });
-
-
 
 // 로그아웃 엔드포인트
 app.post('/logout', (req, res) => {
@@ -265,10 +263,10 @@ app.delete('/delete', authenticateToken, async (req, res) => {
   }
 });
 
-app.use('/api/todos', router);
+app.use('/api/todos', todoRouter);
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
+app.listen(3001, () => {
+  console.log('Server running on port 3001');
 });
 
 export default app;
