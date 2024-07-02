@@ -1,15 +1,18 @@
 // 파일: config/passport.js
-import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
-import User from "../models/User.js";
+import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
+import User from '../models/User.js';
+import dotenv from 'dotenv';
 
-const options = {
+dotenv.config();
+
+const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: "your_jwt_secret", // 비밀 키를 설정하세요
+  secretOrKey: process.env.ACCESS_TOKEN_SECRET,
 };
 
-const jwtStrategy = new JwtStrategy(options, async (payload, done) => {
+const jwtStrategy = new JwtStrategy(opts, async (jwt_payload, done) => {
   try {
-    const user = await User.findById(payload.id);
+    const user = await User.findById(jwt_payload.id);
     if (user) {
       return done(null, user);
     } else {
