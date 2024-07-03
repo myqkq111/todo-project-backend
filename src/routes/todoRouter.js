@@ -81,6 +81,7 @@ router.put('/update', async (req, res) => {
   try {
     const {
       body: {
+        _id,
         userId,
         title,
         recurringEvent,
@@ -90,6 +91,13 @@ router.put('/update', async (req, res) => {
         dueDate,
       },
     } = req;
+    const rs = await Todo.find({ _id: _id });
+    console.log(rs);
+    console.log(rs.failedSchedule);
+
+    if (rs.failedSchedule && (recurringEvent || rs.dueDate !== dueDate)) {
+      console.log('여기 들어옴');
+    }
     const todo = await Todo.findOneAndUpdate(
       { userId: userId },
       {

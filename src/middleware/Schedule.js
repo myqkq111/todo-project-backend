@@ -1,9 +1,9 @@
-import schedule from "node-schedule";
-import Todo from "../models/Todo.js";
+import schedule from 'node-schedule';
+import Todo from '../models/Todo.js';
 
 // 매일 자정에 실행할 스케줄링 작업 설정
 function Schedule() {
-  const cronExpression = "0 0 * * *"; // 매일 자정(0시 0분)에 실행
+  const cronExpression = '0 0 * * *'; // 매일 자정(0시 0분)에 실행
   schedule.scheduleJob(cronExpression, async () => {
     try {
       // 특정 조건에 맞는 데이터 필드 값을 업데이트
@@ -24,13 +24,14 @@ function Schedule() {
           $lte: endOfToday,
         },
       }; // 오늘 날짜와 일치하는 데이터를 찾음
-      const update = { $set: { failedSchedule: true } }; // 업데이트할 필드 값
+
+      const update = { $set: { failedSchedule: true, isImportant: false } }; // 업데이트할 필드 값
 
       // MongoDB 업데이트 쿼리
       const todo = await Todo.updateMany(query, update);
-      console.log("데이터 업데이트 완료:", todo);
+      console.log('데이터 업데이트 완료:', todo);
     } catch (error) {
-      console.error("데이터 업데이트 실패:", error);
+      console.error('데이터 업데이트 실패:', error);
     }
   });
 }
