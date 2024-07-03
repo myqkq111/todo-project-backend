@@ -13,6 +13,16 @@ router.get('/list', async (req, res) => {
   }
 });
 
+// GET todos by category
+router.get('/category/:category', async (req, res) => {
+  try {
+    const todos = await Todo.find({ categori: req.params.category });
+    res.send(todos);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
 // GET a todo by id
 router.get('/:id', async (req, res) => {
   try {
