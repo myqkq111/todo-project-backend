@@ -1,10 +1,10 @@
-import express from "express";
-import Todo from "../models/Todo.js";
+import express from 'express';
+import Todo from '../models/Todo.js';
 
 const router = express.Router();
 
 // GET all todos
-router.get("/list", async (req, res) => {
+router.get('/list', async (req, res) => {
   try {
     const todos = await Todo.find();
     res.send(todos);
@@ -14,11 +14,11 @@ router.get("/list", async (req, res) => {
 });
 
 // GET a todo by id
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const todo = await Todo.findById(req.params.id);
     if (!todo) {
-      return res.status(404).send({ message: "Todo not found" });
+      return res.status(404).send({ message: 'Todo not found' });
     }
     res.send(todo);
   } catch (err) {
@@ -26,11 +26,11 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const todo = await Todo.find({ dueDate: req.query.dueDate });
     if (!todo) {
-      return res.status(404).send({ message: "Todo not found" });
+      return res.status(404).send({ message: 'Todo not found' });
     }
     res.send(todo);
   } catch (err) {
@@ -39,13 +39,13 @@ router.get("/", async (req, res) => {
 });
 
 // CREATE a new todo
-router.post("/new", async (req, res) => {
+router.post('/new', async (req, res) => {
   try {
     const existingTodo = await Todo.findOne({ title: req.body.title });
     if (existingTodo) {
       return res
         .status(400)
-        .json({ message: "이미 같은 제목의 할일이 존재합니다." });
+        .json({ message: '이미 같은 제목의 할일이 존재합니다.' });
     }
 
     const todo = new Todo({
@@ -58,37 +58,55 @@ router.post("/new", async (req, res) => {
     });
 
     const newTodo = await todo.save();
-    console.log("새로운 할일이 생성되었습니다:", newTodo);
+    console.log('새로운 할일이 생성되었습니다:', newTodo);
     res.status(201).send(newTodo);
   } catch (err) {
-    console.error("할일을 생성하는 중 오류 발생:", err);
+    console.error('할일을 생성하는 중 오류 발생:', err);
     res.status(400).send(err);
   }
 });
 
 // UPDATE a todo by id
-router.put("/update", async (req, res) => {
+router.put('/update', async (req, res) => {
   try {
-    const { body : { userId, title, recurringEvent, memo, regDate, recurringPeriod, dueDate}} = req;
+    const {
+      body: {
+        _id,
+        userId,
+        title,
+        recurringEvent,
+        memo,
+        regDate,
+        recurringPeriod,
+        dueDate,
+      },
+    } = req;
+    const rs = await Todo.find({ _id: _id });
+    console.log(rs);
+    console.log(rs.failedSchedule);
+
+    if (rs.failedSchedule && (recurringEvent || rs.dueDate !== dueDate)) {
+      console.log('여기 들어옴');
+    }
     const todo = await Todo.findOneAndUpdate(
       { userId: userId },
       {
-        title: title, 
-        recurringEvent : recurringEvent,
-        memo : memo,
-        regDate : regDate,
-        recurringPeriod : recurringPeriod,
-        dueDate : dueDate
+        title: title,
+        recurringEvent: recurringEvent,
+        memo: memo,
+        regDate: regDate,
+        recurringPeriod: recurringPeriod,
+        dueDate: dueDate,
       }
     );
-    if(!recurringEvent){
+    if (!recurringEvent) {
       await Todo.updateMany(
-        { userId: userId },  
-        { $unset: { recurringPeriod: "", regDate: "" } } 
+        { userId: userId },
+        { $unset: { recurringPeriod: '', regDate: '' } }
       );
     }
     if (!todo) {
-      return res.status(404).send({ message: "Todo not found" });
+      return res.status(404).send({ message: 'Todo not found' });
     }
     res.send(todo);
   } catch (err) {
@@ -97,14 +115,14 @@ router.put("/update", async (req, res) => {
 });
 
 // DELETE a todo by id
-router.delete("/delete/:id", async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   try {
     console.log(req.params.id);
     const todo = await Todo.findByIdAndDelete(req.params.id);
     if (!todo) {
-      return res.status(404).send({ message: "Todo not found" });
+      return res.status(404).send({ message: 'Todo not found' });
     }
-    res.send({ message: "Todo deleted successfully" });
+    res.send({ message: 'Todo deleted successfully' });
   } catch (err) {
     res.status(500).send(err);
   }
