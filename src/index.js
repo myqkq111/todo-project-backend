@@ -66,7 +66,7 @@ app.use((req, res, next) => {
 // 미들웨어 등록
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+// passport.use(jwtStrategy);
 app.use(passport.initialize());
 
 // 스케줄링 미들웨어
