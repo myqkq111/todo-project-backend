@@ -22,6 +22,28 @@ app.use(express.json());
 
 app.use('/api', cors());
 
+// CORS 설정 (테스트용, 실제 환경에서는 필요에 따라 변경)
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET, POST, PUT, DELETE, PATCH, UPDATE'
+  );
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+// 미들웨어 등록
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// passport.use(jwtStrategy);
+app.use(passport.initialize());
+
+// 라우터 등록
+app.use('/api/filter', filterRouter);
+app.use('/api/todos', router);
+app.use('/api/users', userRouter); // userRouter 사용
+
 // JWT 토큰 생성 함수
 function generateToken(user) {
   return jwt.sign(
@@ -52,31 +74,9 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-// CORS 설정 (테스트용, 실제 환경에서는 필요에 따라 변경)
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'GET, POST, PUT, DELETE, PATCH, UPDATE'
-  );
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
-
-// 미들웨어 등록
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// passport.use(jwtStrategy);
-app.use(passport.initialize());
-
 // 스케줄링 미들웨어
 Schedule(); // 미완료 일정 자동 등록
 recurringEventCron(); // 주기적인 일정 자동 업데이트
-
-// 라우터 등록
-app.use('/api/filter', filterRouter);
-app.use('/api/todos', router);
-app.use('/api/users', userRouter); // userRouter 사용
 
 // 서버 리스닝
 

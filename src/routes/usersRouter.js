@@ -9,6 +9,17 @@ import config from '../config/config.js';
 
 const userRouter = express.Router();
 
+// Refresh Token 생성
+function generateRefreshToken(user) {
+  return jwt.sign(
+    { id: user._id, username: user.username },
+    config.REFRESH_TOKEN_SECRET,
+    {
+      expiresIn: '30d', // Refresh Token 유효 기간 설정 (30일)
+    }
+  );
+}
+
 // 회원가입 엔드포인트
 userRouter.post('/register', async (req, res) => {
   try {
@@ -83,6 +94,38 @@ userRouter.post('/login', async (req, res, next) => {
   } catch (error) {
     console.error('로그인 중 오류 발생:', error);
     return next(error);
+  }
+});
+
+// Access Token 재발급 엔드포인트 (Refresh Token 사용)
+userRouter.post('/refresh-token', async (req, res, next) => {
+  const refreshToken = req.body.refreshToken;
+
+  if (!refreshToken) {
+    return res.status(401).json({ error: 'Refresh token not provided' });
+  }
+
+  try {
+    const decoded = jwt.verify(refreshToken, config.REFRESH_TOKEN_SECRET);
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(404).json({ error: '사용자를 찾을 수 없습니다.' });
+    }
+
+    // 새로운 Access Token 생성
+    const accessToken = jwt.sign(
+      { id: user._id, username: user.username },
+      config.ACCESS_TOKEN_SECRET,
+      {
+        expiresIn: '1h', // 새로운 Access Token 유효 기간 설정 (1시간)
+      }
+    );
+
+    res.json({ accessToken });
+  } catch (error) {
+    console.error('Refresh token error:', error);
+    res.status(403).json({ error: '유효하지 않은 리프레시 토큰' });
   }
 });
 
