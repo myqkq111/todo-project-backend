@@ -27,7 +27,7 @@ function generateToken(user) {
   return jwt.sign(
     { id: user._id, username: user.username },
     config.ACCESS_TOKEN_SECRET,
-    { expiresIn: '1h' }
+    { expiresIn: '1y' }
   );
 }
 

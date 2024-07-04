@@ -74,7 +74,7 @@ userRouter.post('/login', async (req, res, next) => {
           const token = jwt.sign(
             { id: user._id, username: user.username },
             config.ACCESS_TOKEN_SECRET,
-            { expiresIn: '1h' }
+            { expiresIn: '1y' }
           );
           return res.json({ token });
         });
