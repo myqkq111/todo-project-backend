@@ -91,12 +91,11 @@ router.put('/update', async (req, res) => {
         dueDate,
       },
     } = req;
-    const rs = await Todo.find({ _id: _id });
-    console.log(rs);
-    console.log(rs.failedSchedule);
+    const rs = await Todo.findOne({ _id: _id });
 
-    if (rs.failedSchedule && (recurringEvent || rs.dueDate !== dueDate)) {
-      console.log('여기 들어옴');
+    let failedSchedule = rs.failedSchedule;
+    if (failedSchedule && (recurringEvent || rs.dueDate !== dueDate)) {
+      failedSchedule = false;
     }
     const todo = await Todo.findOneAndUpdate(
       { userId: userId },
@@ -107,6 +106,7 @@ router.put('/update', async (req, res) => {
         regDate: regDate,
         recurringPeriod: recurringPeriod,
         dueDate: dueDate,
+        failedSchedule: failedSchedule,
       }
     );
     if (!recurringEvent) {

@@ -57,8 +57,8 @@ app.use(express.json());
 passport.use(jwtStrategy);
 app.use(passport.initialize());
 
-Schedule(); // 미완료 일정 자동 등록
 recurringEventCron(); // 주기적인 일정 자동 업데이트
+Schedule(); // 미완료 일정 자동 등록
 
 app.use('/api/filter', filterRouter);
 
