@@ -81,7 +81,7 @@ userRouter.post('/login', async (req, res, next) => {
             console.error('로그인 중 오류 발생:', error);
             return next(error);
           }
-
+          console.log(user._id);
           const token = jwt.sign(
             { id: user._id, username: user.username },
             config.ACCESS_TOKEN_SECRET,
