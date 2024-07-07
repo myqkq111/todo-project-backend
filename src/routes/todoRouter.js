@@ -6,7 +6,7 @@ const router = express.Router();
 // GET all todos
 router.get('/list', async (req, res) => {
   try {
-    const todos = await Todo.find({ userId: req.user._id });
+    const todos = await Todo.find({ userId: req.user._id, completed:false });
     res.send(todos);
   } catch (err) {
     res.status(500).send(err);
@@ -19,6 +19,7 @@ router.get('/category/:category', async (req, res) => {
     const todos = await Todo.find({
       categori: req.params.category,
       userId: req.user._id,
+      completed:false
     });
     res.send(todos);
   } catch (err) {
@@ -32,6 +33,7 @@ router.get('/:id', async (req, res) => {
     const todo = await Todo.findOne({
       _id: req.params.id,
       userId: req.user._id,
+      completed:false
     });
     if (!todo) {
       return res.status(404).send({ message: 'Todo not found' });
@@ -47,6 +49,7 @@ router.get('/', async (req, res) => {
     const todo = await Todo.find({
       dueDate: req.query.dueDate,
       userId: req.user._id,
+      completed:false
     });
     if (!todo) {
       return res.status(404).send({ message: 'Todo not found' });
@@ -119,7 +122,8 @@ router.put('/update', async (req, res) => {
         dueDate: dueDate,
         failedSchedule: failedSchedule,
         completed: false,
-      }
+      },
+      { returnOriginal: false }
     );
     if (!recurringEvent) {
       await Todo.updateMany(

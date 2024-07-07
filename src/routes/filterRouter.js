@@ -15,7 +15,8 @@ router.put('/isImportant', async (req, res) => {
       { userId: req.user._id, title: title },
       {
         isImportant: update,
-      }
+      },
+      { returnOriginal: false }
     );
     return res.status(200).json(todo);
   } catch (err) {
@@ -26,7 +27,7 @@ router.put('/isImportant', async (req, res) => {
 // 중요일정 목록
 router.get('/isImportant', async (req, res) => {
   try {
-    const todos = await Todo.find({ isImportant: true, userId: req.user._id });
+    const todos = await Todo.find({ isImportant: true, userId: req.user._id, completed:false });
     return res.status(200).json(todos);
   } catch (err) {
     return res.status(500).send('Internal server error');
@@ -59,6 +60,7 @@ router.get('/recurringEvent', async (req, res) => {
     const todos = await Todo.find({
       recurringEvent: true,
       userId: req.user._id,
+      completed:false
     });
     return res.status(200).json(todos);
   } catch (err) {
@@ -70,15 +72,15 @@ router.get('/recurringEvent', async (req, res) => {
 router.put('/completed', async (req, res) => {
   try {
     const {
-      body: { userId, completed, title },
+      body: { userId, completed, title, isImportant },
     } = req;
     const update = completed ? false : true;
     const todo = await Todo.findOneAndUpdate(
       { userId: req.user._id, title: title },
       {
         completed: update,
-        isImportant: false,
-      }
+      },
+      { returnOriginal: false }
     );
 
     return res.status(200).json(todo);

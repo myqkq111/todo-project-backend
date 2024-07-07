@@ -4,6 +4,7 @@ import Todo from '../models/Todo.js';
 // 매일 자정에 실행할 스케줄링 작업 설정
 function Schedule() {
   const cronExpression = '0 0 * * *'; // 매일 자정(0시 0분)에 실행
+  // const cronExpression = new Date(Date.now() + 1000); //1초뒤에 실행
   schedule.scheduleJob(cronExpression, async () => {
     try {
       // 특정 조건에 맞는 데이터 필드 값을 업데이트
