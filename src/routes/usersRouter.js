@@ -222,4 +222,26 @@ userRouter.delete(
   }
 );
 
+// 아이디 찾기 엔드포인트
+userRouter.post('/find-id', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    // 데이터베이스에서 이메일에 해당하는 사용자 찾기
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ error: '일치하는 사용자가 없습니다.' });
+    }
+
+    // 사용자 아이디를 클라이언트에 반환
+    res.json({ username: user.username }); // 사용자 아이디 반환
+  } catch (err) {
+    console.error('아이디 찾기 중 오류 발생:', err);
+    res
+      .status(500)
+      .json({ error: '서버 오류 발생, 나중에 다시 시도해주세요.' });
+  }
+});
+
 export default userRouter;
