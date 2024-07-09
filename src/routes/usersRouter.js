@@ -87,6 +87,8 @@ userRouter.post('/login', async (req, res, next) => {
             config.ACCESS_TOKEN_SECRET,
             { expiresIn: '1y' }
           );
+
+          console.log('Generated JWT Token:', token);
           return res.json({ token });
         });
       }
