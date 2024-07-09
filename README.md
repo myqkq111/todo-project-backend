@@ -54,7 +54,7 @@
 ## 주요기능
 - 페이지의 기본요소인 로그인과 회원가입기능, 계정관련 부가기능들 구현
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/b0a81793-e6fd-4b36-847f-1be79e7e382c)
-![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/00b57a73-7804-4ac4-b4fb-0b03b49aa044)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/e2b7cdcc-9f39-45f4-9f4b-f7b616ab90d0)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/642f6a9f-06d5-4233-a0b9-68528f57b18b)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/8af79029-d880-4892-a5a4-11044bce0eff)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/f6bce8c9-b022-4699-9a4a-bdb164d7ca05)
