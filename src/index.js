@@ -40,8 +40,12 @@ app.use(express.json());
 app.use(passport.initialize());
 
 // 라우터 등록
-app.use('/api/filter', filterRouter);
-app.use('/api/todos', router);
+app.use(
+  '/api/filter',
+  passport.authenticate('jwt', { session: false }),
+  filterRouter
+);
+app.use('/api/todos', passport.authenticate('jwt', { session: false }), router);
 app.use('/api/users', userRouter); // userRouter 사용
 
 // JWT 토큰 생성 함수

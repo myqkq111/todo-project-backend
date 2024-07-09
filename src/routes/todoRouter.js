@@ -6,7 +6,7 @@ const router = express.Router();
 // GET all todos
 router.get('/list', async (req, res) => {
   try {
-    const todos = await Todo.find();
+    const todos = await Todo.find({ userId: req.user._id, completed:false });
     res.send(todos);
   } catch (err) {
     res.status(500).send(err);
@@ -16,7 +16,11 @@ router.get('/list', async (req, res) => {
 // GET todos by category
 router.get('/category/:category', async (req, res) => {
   try {
-    const todos = await Todo.find({ categori: req.params.category });
+    const todos = await Todo.find({
+      categori: req.params.category,
+      userId: req.user._id,
+      completed:false
+    });
     res.send(todos);
   } catch (err) {
     res.status(500).send(err);
@@ -26,7 +30,11 @@ router.get('/category/:category', async (req, res) => {
 // GET a todo by id
 router.get('/:id', async (req, res) => {
   try {
-    const todo = await Todo.findById(req.params.id);
+    const todo = await Todo.findOne({
+      _id: req.params.id,
+      userId: req.user._id,
+      completed:false
+    });
     if (!todo) {
       return res.status(404).send({ message: 'Todo not found' });
     }
@@ -38,7 +46,11 @@ router.get('/:id', async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const todo = await Todo.find({ dueDate: req.query.dueDate });
+    const todo = await Todo.find({
+      dueDate: req.query.dueDate,
+      userId: req.user._id,
+      completed:false
+    });
     if (!todo) {
       return res.status(404).send({ message: 'Todo not found' });
     }
@@ -51,7 +63,10 @@ router.get('/', async (req, res) => {
 // CREATE a new todo
 router.post('/new', async (req, res) => {
   try {
-    const existingTodo = await Todo.findOne({ title: req.body.title });
+    const existingTodo = await Todo.findOne({
+      title: req.body.title,
+      userId: req.user._id,
+    });
     if (existingTodo) {
       return res
         .status(400)
@@ -60,10 +75,9 @@ router.post('/new', async (req, res) => {
 
     const todo = new Todo({
       title: req.body.title,
-      contents: req.body.contents,
       categori: req.body.categori,
       dueDate: req.body.dueDate,
-      userId: req.body.userId,
+      userId: req.user._id,
       // Additional fields can be added based on your schema
     });
 
@@ -91,14 +105,14 @@ router.put('/update', async (req, res) => {
         dueDate,
       },
     } = req;
-    const rs = await Todo.findOne({ _id: _id });
+    const rs = await Todo.findOne({ _id: _id, userId: req.user._id });
 
     let failedSchedule = rs.failedSchedule;
     if (failedSchedule && (recurringEvent || rs.dueDate !== dueDate)) {
       failedSchedule = false;
     }
     const todo = await Todo.findOneAndUpdate(
-      { userId: userId },
+      { userId: req.user._id, _id: _id },
       {
         title: title,
         recurringEvent: recurringEvent,
@@ -107,11 +121,13 @@ router.put('/update', async (req, res) => {
         recurringPeriod: recurringPeriod,
         dueDate: dueDate,
         failedSchedule: failedSchedule,
-      }
+        completed: false,
+      },
+      { returnOriginal: false }
     );
     if (!recurringEvent) {
       await Todo.updateMany(
-        { userId: userId },
+        { userId: req.user._id },
         { $unset: { recurringPeriod: '', regDate: '' } }
       );
     }
@@ -127,8 +143,10 @@ router.put('/update', async (req, res) => {
 // DELETE a todo by id
 router.delete('/delete/:id', async (req, res) => {
   try {
-    console.log(req.params.id);
-    const todo = await Todo.findByIdAndDelete(req.params.id);
+    const todo = await Todo.findOneAndDelete({
+      _id: req.params.id,
+      userId: req.user._id,
+    });
     if (!todo) {
       return res.status(404).send({ message: 'Todo not found' });
     }
