@@ -48,6 +48,8 @@
 ## 주요기능
 - 페이지의 기본요소인 로그인과 회원가입기능, 계정관련 부가기능들 구현
 -[프레젠테이션1.pptx](https://github.com/user-attachments/files/16138832/1.pptx)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/b0a81793-e6fd-4b36-847f-1be79e7e382c)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/8f454cf9-7017-433b-a821-624927b98a0a)
 
 
 ----
