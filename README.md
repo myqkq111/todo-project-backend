@@ -50,7 +50,14 @@
 -[프레젠테이션1.pptx](https://github.com/user-attachments/files/16138832/1.pptx)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/b0a81793-e6fd-4b36-847f-1be79e7e382c)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/8f454cf9-7017-433b-a821-624927b98a0a)
-
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/642f6a9f-06d5-4233-a0b9-68528f57b18b)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/8af79029-d880-4892-a5a4-11044bce0eff)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/f6bce8c9-b022-4699-9a4a-bdb164d7ca05)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/ae5682b8-58e9-44c9-878f-9ff08d5de392)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/b11d132d-147f-48f4-b2ea-0402468cece4)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/3e5d7db8-2624-4ba4-9208-64ad753eb4dd)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/78733d0e-fda1-469e-80df-dfd4e797f52f)
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/5993f801-7aed-459e-8bec-f8332418c22b)
 
 ----
 ## 아쉬운 부분
