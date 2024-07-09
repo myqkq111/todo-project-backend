@@ -16,10 +16,16 @@
 
 ## 📅 계획 2024.06.23 ~ 2024.07.08
 
-# Todolist 웹 개발 계획 06. 23
+# Todolist 웹 개발 계획
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/16a99be5-f755-40c4-a70d-3d9921235ec5)
+
+06.21 첫 계획 : [6.21 계획서.pptx](https://github.com/user-attachments/files/16140742/6.21.pptx)
+
+06.24 계획 구체화 : [06.24 계획서.pptx](https://github.com/user-attachments/files/16140820/06.24.pptx)
+06.25 계획 수정 :
 
 
--
+
 
 # 프론트      :  06.24 ~ 27
 - 메인 화면 완료  : 06.24 - 25
@@ -37,7 +43,7 @@
 -
 
 ----
-### 팀 운영
+## 팀 운영
 
 
 --> 계획 수정 절차 및 소스 트리 등
@@ -47,7 +53,6 @@
 ----
 ## 주요기능
 - 페이지의 기본요소인 로그인과 회원가입기능, 계정관련 부가기능들 구현
--[프레젠테이션1.pptx](https://github.com/user-attachments/files/16138832/1.pptx)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/b0a81793-e6fd-4b36-847f-1be79e7e382c)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/8f454cf9-7017-433b-a821-624927b98a0a)
 ![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/642f6a9f-06d5-4233-a0b9-68528f57b18b)
@@ -67,9 +72,9 @@
 
 ----
 ## 팀원
+
 - 최준서, 이명준, 박승연, 박진희
-
-
+  
 ----
 ## 프로젝트 회고
 
