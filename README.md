@@ -22,7 +22,11 @@
 06.21 첫 계획 : [6.21 계획서.pptx](https://github.com/user-attachments/files/16140742/6.21.pptx)
 
 06.24 계획 구체화 : [06.24 계획서.pptx](https://github.com/user-attachments/files/16140820/06.24.pptx)
-06.25 계획 수정 :
+
+06.26 수정된 디자인 : [06.26 수정 된 디자인.pptx](https://github.com/user-attachments/files/16157512/06.26.pptx)
+
+06.27 수정된 계획 : 
+
 
 
 
