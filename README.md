@@ -17,8 +17,7 @@
 ## 📅 계획 2024.06.23 ~ 2024.07.08
 
 # Todolist 웹 개발 계획
-![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/84553a73-00c5-4245-a5a7-cf7f37c91300)
-
+![image](https://github.com/myqkq111/todo-project-backend/assets/169429248/51269e1b-d8d6-439b-a589-295e92bc4a9c)
 
 06.21 첫 계획 : [6.21 계획서.pptx](https://github.com/user-attachments/files/16140742/6.21.pptx)
 
