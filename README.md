@@ -25,10 +25,12 @@
 
 06.26 수정된 디자인 : [06.26 수정 된 디자인.pptx](https://github.com/user-attachments/files/16157512/06.26.pptx)
 
-06.27 수정된 계획 : 
+06.27 수정된 계획 : [06.27 수정된 계획.pptx](https://github.com/user-attachments/files/16157807/06.27.pptx)
 
 
-
+|프론트|테스트2|테스트3|
+|백엔드|테스트2|테스트3|
+| 배포 |테스트2|테스트3|
 
 
 # 프론트      :  06.24 ~ 27
