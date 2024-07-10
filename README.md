@@ -37,7 +37,7 @@
 
 # 백엔드      :  06.24 ~ 
 - 로그인, 회원가입, ID찾기, PWD변경기능 구현완료 : 07.01
-- C(Create)R(Read)U(Update)D(Delete) 기능 구현완료 및 CR과 화면연동완료
+- C(Create)R(Read)U(Update)D(Delete) 기능 구현완료 및 CR 화면연동완료
 -
 
 # 배포        :  
