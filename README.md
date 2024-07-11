@@ -59,12 +59,11 @@
 
 ----
 
-
 ## 🛠️ Tech Stacks
-
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=Amazon%20S3&logoColor=white" alt="Amazon EC2" style="margin-right: 10px; margin-bottom: 10px;">
+  <img src="https://img.shields.io/badge/Amazon%20EC2-FF9900?style=for-the-badge&logo=Amazon%20EC2&logoColor=white" alt="Amazon EC2" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=Amazon%20S3&logoColor=white" alt="Amazon S3" style="margin-right: 10px; margin-bottom: 10px;">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="Node.js" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white" alt="Git" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=Tailwind%20CSS&logoColor=white" alt="Tailwind CSS" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" alt="React" style="margin-right: 10px; margin-bottom: 10px;">
@@ -105,6 +104,8 @@
   ㅇㅇ
   <li>이명준</li>
   <li>박승연</li>
+  계획을 세우고 이를 기반으로 작업을 나누어 진행하는 것이 얼마나 중요한지 깨달았습니다. 초기에는 막연하게 시작했지만, 점차 체계적으로 작업을 진행하면서 프로젝트가 순조롭게 진행되었습니다.
+이번 경험을 통해 협업의 즐거움과 중요성을 다시 한 번 느낄 수 있었고, 앞으로의 프로젝트에서도 이번에 배운 것들을 잘 활용할 수 있을 것 같습니다.
   <li>박진희</li>
   간단한 CRUD작업을 했지만, 기능 구현은 금방인데, 화면과 연동 시킬 때 계속 문제가 떠서 수정하느라 별로 진행을 못한 것 같고 제가 한게 너무 없는 것 같아서 팀원들에게 죄송했습니다. 그래도 이 프로젝트를 하면서 많이 배울 수 있었던 것 같아서 좋았습니다.
 </ul>
