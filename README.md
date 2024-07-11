@@ -38,19 +38,18 @@
 
 
 
+- [기능명세](산출물/기능명세.pdf)
+- [06.23 계획서](산출물/6.23 계획서.pdf)
+- [06.26 계획서](산출물/6.26 수정 된 디자인.pdf)
+- [06.27 계획서](산출물/6.27 수정된 계획.pdf)
 
 
-<ul>
-  <li>06.21 첫 계획 : <a href="https://github.com/user-attachments/files/16140742/6.21.pptx">6.21 계획서.pptx</a></li>
-  <li>06.24 계획 구체화 : <a href="https://github.com/user-attachments/files/16140820/06.24.pptx">06.24 계획서.pptx</a></li>
-  <li>06.26 수정된 디자인 : <a href="https://github.com/user-attachments/files/16157512/06.26.pptx">06.26 수정된 디자인.pptx</a></li>
-  <li>06.27 수정된 계획 : <a href="https://github.com/user-attachments/files/16157807/06.27.pptx">06.27 수정된 계획.pptx</a></li>
-</ul>
 
 
 
 ----
-
+- [주요기능](산출물/주요기능.pdf)
+- 
 ## ⭐ 주요기능
 <div style="display: flex; flex-wrap: wrap; justify-content: flex-start;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/b0a81793-e6fd-4b36-847f-1be79e7e382c" alt="기능 이미지" style="width: 48%; margin: 1%;">
