@@ -1,10 +1,8 @@
 <div align= "center">
     <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=120&text=TodoList&animation=fadeIn&fontColor=ffffff&fontSize=70" />
-    </div>
-    <div style="text-align: left;"> 
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 계획 관리 시스템 (TodoList) </h2>  
-    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 🚀프로젝트 소개</li>왜 우리의 To<li>Do 리스트가 특별한가요? 캘린더를 사용할 때, 일상과 직장을 함께 관리하다 보면 오히려 복잡해지고 혼란스러워질 수 있습니다. 그래서 저희는 일상과 직장을 각각 구분하여 효율적으로 관리할 수 있는 To<li>Do 리스트를 구상하게 되었습니다.</li></li></li></li></li>우리의 목표</li>저희 To<li>Do 리스트 웹사이트는 여러분이 일상과 직장 생활을 체계적으로 관리하여 중요한 일을 놓치지 않도록 도와드립니다. 간편하고 직관적인 디자인 덕분에 누구나 쉽게 사용할 수 있습니다.</li></li> </div> 
-    </div>
+</div>
+
+    
 
     
     
