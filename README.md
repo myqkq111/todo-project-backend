@@ -2,7 +2,6 @@
 
 ![작게](https://github.com/myqkq111/todo-project-backend/assets/169429248/9eae1bd4-9fe3-4cdd-9fc8-95e800ed50da)
 
-## 🚀 프로젝트 소개
 ### 왜 우리의 To-Do 리스트가 특별한가요?
 <p> 캘린더를 사용할 때, 일상과 직장을 함께 관리하다 보면 오히려 복잡해지고 혼란스러워질 수 있습니다. 그래서 저희는 일상과 직장을 각각 구분하여 효율적으로 관리할 수 있는 To-Do 리스트를 구상하게 되었습니다.</p>
 
@@ -41,7 +40,10 @@
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/78733d0e-fda1-469e-80df-dfd4e797f52f" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/5993f801-7aed-459e-8bec-f8332418c22b" alt="기능 이미지" style="width: 48%; margin: 1%;">
 </div>
+
+
 ----
+
 
 ## 🛠️ Tech Stacks
 
@@ -54,7 +56,9 @@
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white" alt="MongoDB" style="margin-right: 10px; margin-bottom: 10px;">
 </div>
 
+
 ----
+
 
 ## 😥 아쉬운 부분
 
@@ -64,7 +68,9 @@
   <li>스마트폰이나 이메일로 알람 서비스</li>
 </ul>
 
+
 ----
+
 
 ## 팀원
 
