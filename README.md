@@ -1,5 +1,5 @@
 <div align= "center">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=180&text=TodoList&animation=fadeIn&fontColor=ffffff&fontSize=50" />
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=120&text=TodoList&animation=fadeIn&fontColor=ffffff&fontSize=70" />
     </div>
     <div style="text-align: left;"> 
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 계획 관리 시스템 (TodoList) </h2>  
@@ -16,8 +16,7 @@
           </div>
     </div>
     
-
-
+    
 # 📝 계획 관리 시스템 (TodoList)
 
 ![작게](https://github.com/myqkq111/todo-project-backend/assets/169429248/9eae1bd4-9fe3-4cdd-9fc8-95e800ed50da)
