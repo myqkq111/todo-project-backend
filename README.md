@@ -5,16 +5,7 @@
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 계획 관리 시스템 (TodoList) </h2>  
     <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 🚀프로젝트 소개</li>왜 우리의 To<li>Do 리스트가 특별한가요? 캘린더를 사용할 때, 일상과 직장을 함께 관리하다 보면 오히려 복잡해지고 혼란스러워질 수 있습니다. 그래서 저희는 일상과 직장을 각각 구분하여 효율적으로 관리할 수 있는 To<li>Do 리스트를 구상하게 되었습니다.</li></li></li></li></li>우리의 목표</li>저희 To<li>Do 리스트 웹사이트는 여러분이 일상과 직장 생활을 체계적으로 관리하여 중요한 일을 놓치지 않도록 도와드립니다. 간편하고 직관적인 디자인 덕분에 누구나 쉽게 사용할 수 있습니다.</li></li> </div> 
     </div>
-    <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
-    <div style="margin: ; text-align: left;" "text-align: left;"> <img src="https://img.shields.io/badge/Amazon S3-569A31?style=for-the-badge&logo=Amazon S3&logoColor=white">
-          <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
-          <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
-          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
-          <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white">
-          <br/><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
-          </div>
-    </div>
+
     
     
 # 📝 계획 관리 시스템 (TodoList)
@@ -50,6 +41,15 @@
 
 ----
 ## 🛠 기술 스택
+    <div style="text-align: left;">
+    <div style="margin: ; text-align: left;" "text-align: left;"> <img src="https://img.shields.io/badge/Amazon S3-569A31?style=for-the-badge&logo=Amazon S3&logoColor=white">
+          <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
+          <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
+          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
+          <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white">
+          <br/><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
+          </div>
+    </div>
 
 
 ## ⭐ 주요기능
