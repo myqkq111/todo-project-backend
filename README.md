@@ -29,10 +29,7 @@
 ----
 
 ## ⭐ 주요기능
-
-<p>페이지의 기본요소인 로그인과 회원가입기능, 계정관련 부가기능들 구현</p>
-
-<div style="display: flex; flex-wrap: wrap;">
+<div style="display: flex; flex-wrap: wrap; justify-content: flex-start;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/b0a81793-e6fd-4b36-847f-1be79e7e382c" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/f8815263-bb16-4063-9d2a-af077e8f4a10" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/642f6a9f-06d5-4233-a0b9-68528f57b18b" alt="기능 이미지" style="width: 48%; margin: 1%;">
@@ -44,7 +41,6 @@
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/78733d0e-fda1-469e-80df-dfd4e797f52f" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/5993f801-7aed-459e-8bec-f8332418c22b" alt="기능 이미지" style="width: 48%; margin: 1%;">
 </div>
-
 ----
 
 ## 🛠️ Tech Stacks
