@@ -72,11 +72,11 @@
 ## 🛠️ Tech Stacks
 
 <div style="display: flex; flex-wrap: wrap;">
+  <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=Amazon%20S3&logoColor=white" alt="Amazon EC2" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=Amazon%20S3&logoColor=white" alt="Amazon S3" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white" alt="Git" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=Tailwind%20CSS&logoColor=white" alt="Tailwind CSS" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" alt="React" style="margin-right: 10px; margin-bottom: 10px;">
-  <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white" alt="Javascript" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white" alt="MongoDB" style="margin-right: 10px; margin-bottom: 10px;">
 </div>
 
