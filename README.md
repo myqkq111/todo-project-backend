@@ -34,7 +34,7 @@
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/f8815263-bb16-4063-9d2a-af077e8f4a10" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/642f6a9f-06d5-4233-a0b9-68528f57b18b" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/8af79029-d880-4892-a5a4-11044bce0eff" alt="기능 이미지" style="width: 48%; margin: 1%;">
-  <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/f6bce8c9-b022-4699-9a4-bdb164d7ca05" alt="기능 이미지" style="width: 48%; margin: 1%;">
+  <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/f6bce8c9-b022-4699-9a4a-bdb164d7ca05" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/ae5682b8-58e9-44c9-878f-9ff08d5de392" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/b11d132d-147f-48f4-b2ea-0402468cece4" alt="기능 이미지" style="width: 48%; margin: 1%;">
   <img src="https://github.com/myqkq111/todo-project-backend/assets/169429248/3e5d7db8-2624-4ba4-9208-64ad753eb4dd" alt="기능 이미지" style="width: 48%; margin: 1%;">
