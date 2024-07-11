@@ -37,10 +37,9 @@
 
 
 
-
 ###  [06.23 계획서](산출물/6.23%20계획서.pdf)      |      [06.26 수정 디자인](산출물/06.26%20수정%20된%20디자인.pdf)      |      [06.27 수정 계획](산출물/06.27%20수정된%20계획.pdf)
-
 ----
+<br>
 
 ## ⭐ [주요기능](산출물/주요기능.pdf)
 <div style="display: flex; flex-wrap: wrap; justify-content: flex-start;">
@@ -69,10 +68,8 @@
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" alt="React" style="margin-right: 10px; margin-bottom: 10px;">
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white" alt="MongoDB" style="margin-right: 10px; margin-bottom: 10px;">
 </div>
-
-
+ 
 ----
-
 
 ## 😥 아쉬운 부분
 
@@ -82,12 +79,9 @@
   <li>스마트폰이나 이메일로 알람 서비스</li>
 </ul>
 
-
 ----
 
-
 ## 팀원
-
 <ul>
   <li>최준서</li>
   <li>이명준</li>
@@ -102,10 +96,16 @@
 <ul>
   <li>최준서 👑</li>
   ㅇㅇ
+  <br>
+   <br>
   <li>이명준</li>
+  <br>
+   <br>
   <li>박승연</li>
   계획을 세우고 이를 기반으로 작업을 나누어 진행하는 것이 얼마나 중요한지 깨달았습니다. 초기에는 막연하게 시작했지만, 점차 체계적으로 작업을 진행하면서 프로젝트가 순조롭게 진행되었습니다.
 이번 경험을 통해 협업의 즐거움과 중요성을 다시 한 번 느낄 수 있었고, 앞으로의 프로젝트에서도 이번에 배운 것들을 잘 활용할 수 있을 것 같습니다.
+   <br>
+   <br>
   <li>박진희</li>
   간단한 CRUD작업을 했지만, 기능 구현은 금방인데, 화면과 연동 시킬 때 계속 문제가 떠서 수정하느라 별로 진행을 못한 것 같고 제가 한게 너무 없는 것 같아서 팀원들에게 죄송했습니다. 그래도 이 프로젝트를 하면서 많이 배울 수 있었던 것 같아서 좋았습니다.
 </ul>
