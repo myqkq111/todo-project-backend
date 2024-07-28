@@ -145,7 +145,7 @@
   </tr>
   <tr>
     <td>
-      
+      ![화면 캡처 2024-07-28 174453](https://github.com/user-attachments/assets/87d102d1-b86a-4384-9c9c-ed1f8a20ada5)
     </td>
     <td></td>
   </tr>
