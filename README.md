@@ -80,10 +80,76 @@
 </ul>
 
 ----
+## 👥 구성원 및 담당 역할
+🔧<b>BE</b>
+<table>
+  <tr>
+    <td><b>이름</b></td>
+    <td><b>개발 내용</b></td>
+  </tr>
+  <tr>
+    <td>최준서</td>
+    <td>검색 기능 API구현, 필터 기능 API 구현</td>
+  </tr>
+  <tr>
+    <td>이명준</td>
+    <td>JWT, 회원CRUD 기능 API 구현</td>
+  </tr>
+  <tr>
+    <td>박승연</td>
+    <td>테스트 코드 작성, 발표 자료 제작</td>
+  </tr>
+  <tr>
+    <td>박진희</td>
+    <td>일정CRUD 기능 API 구현, 일정 카테고리 기능 API 구현</td>
+  </tr>
+</table>
 
-## 👥 팀원
+🖌️<b>FE</b>
+<table>
+  <tr>
+    <td><b>이름</b></td>
+    <td><b>개발 내용</b></td>
+  </tr>
+  <tr>
+    <td>최준서</td>
+    <td>전체적인 UI/기능 구현, 빌드 및 배포</td>
+  </tr>
+  <tr>
+    <td>이명준</td>
+    <td>회원CRUD UI/기능 구현, 빌드 및 배포</td>
+  </tr>
+  <tr>
+    <td>박승연</td>
+    <td>전체적인 UI 구현, 웹 디자인</td>
+  </tr>
+  <tr>
+    <td>박진희</td>
+    <td>일정CRUD UI/기능 구현</td>
+  </tr>
+</table>
+
+----
+
+## ⚙️팀 운영
+
+<b>깃과 지라</b>
+<table>
+  <tr>
+    <td>
+      깃
+    </td>
+    <td>
+      지라
+    </td>
+  </tr>
+  <tr>
+    <td>
       
-최준서 | 이명준 | 박승연 | 박진희
+    </td>
+    <td></td>
+  </tr>
+</table>
 
 ----
 
